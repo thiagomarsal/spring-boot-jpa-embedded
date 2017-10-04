@@ -1,0 +1,30 @@
+<div class="container" ng-controller="productController">
+    <div>
+        <h2>Product List</h2>
+        <table class="table table-responsive">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="product in products">
+                <td>{{product.id}}</td>
+                <td>{{product.name}}</td>
+                <td>{{product.price}}</td>
+                <td><a href="">Edit</a></td>
+                <td><a href="">Delete</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="row">
+        <div class="col-sm-3">
+            <button type="button" class="btn btn-link" ng-click="initProductAdd()">Add Product</button>
+        </div>
+    </div>
+</div>

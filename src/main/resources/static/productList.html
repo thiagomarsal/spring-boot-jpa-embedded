@@ -1,0 +1,70 @@
+<div class="container" ng-controller="productController">
+    <div>
+        <h2>Product List</h2>
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Delete</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat-start="product in products">
+                <td>{{product.id}}</td>
+                <td>{{product.name}}</td>
+                <td>{{product.price}}</td>
+                <td><a href="" ng-click="deleteProduct(product)">Delete</a> </td>
+            </tr>
+            <tr ng-if="product.images && product.images.length > 0">
+                <td>Images</td>
+                <td colspan="3" class="success">
+                    <table class="table table-default">
+                        <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Path</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="image in product.images">
+                            <td>{{image.id}}</td>
+                            <td>{{image.name}}</td>
+                            <td>{{image.path}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <tr ng-if="product.product" ng-repeat-end>
+                <td>Product</td>
+                <td colspan="3" class="success">
+                    <table class="table table-default">
+                        <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Price</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>{{product.product.id}}</td>
+                                <td>{{product.product.name}}</td>
+                                <td>{{product.product.price}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="row">
+        <div class="col-sm-3">
+            <button type="button" class="btn btn-link" ng-click="initProductAdd()">Add Product</button>
+        </div>
+    </div>
+</div>

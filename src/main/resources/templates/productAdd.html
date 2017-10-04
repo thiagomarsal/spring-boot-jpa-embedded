@@ -1,0 +1,32 @@
+<div class="container" ng-controller="productController">
+    <div>
+        <h2>Add Product</h2>
+        <form id="formProduct">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" id="name" ng-model="newProduct.name">
+            </div>
+            <div class="form-group">
+                <label for="price">Price:</label>
+                <input type="text" class="form-control" id="price"ng-model="newProduct.price">
+            </div>
+            <div class="form-group">
+                <label for="selProduct">Product:</label>
+                <select class="form-control" id="selProduct" ng-model="newProduct.product">
+                    <option ng-repeat="product in products" value="{{product}}">{{product.name}}</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="selImages">Images:</label>
+                <select class="form-control" id="selImages">
+                    <option ng-repeat="image in images">{{image.name}}</option>
+                </select>
+            </div>
+        </form>
+    </div>
+    <div class="row">
+        <div class="col-sm-3">
+            <button type="submit" class="btn btn-primary" ng-click="saveProduct()">Save</button>
+        </div>
+    </div>
+</div>

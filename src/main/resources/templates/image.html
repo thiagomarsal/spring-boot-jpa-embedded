@@ -1,0 +1,30 @@
+<div class="container" ng-controller="imageController">
+    <div>
+        <h2>Image List</h2>
+        <table class="table table-responsive">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Path</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="image in images">
+                <td>{{image.id}}</td>
+                <td>{{image.name}}</td>
+                <td>{{image.path}}</td>
+                <td><a href="">Edit</a> </td>
+                <td><a href="">Delete</a> </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="row">
+        <div class="col-sm-3">
+            <button type="button" class="btn btn-link" ng-click="initImageAdd()">Add Image</button>
+        </div>
+    </div>
+</div>
